@@ -26,6 +26,8 @@ gem "zurb-foundation", "~> 2.1.0"
 gem "koala", "~> 1.2.1"
 
 gem 'nfo-resque-mongo', :require => 'resque'
+gem "god", "~> 0.11.0"
+
 
 # Omniauth gems
 gem "omniauth-facebook", "~> 1.0.0"
