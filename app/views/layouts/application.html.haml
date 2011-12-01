@@ -6,14 +6,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header
-      %nav
-        %ul.topnav
-          %li Lien 1
-          %li Lien 2
-          %li Lien 3
+    = yield
+    
       
-    .container
-      = yield
-      
-    %footer
