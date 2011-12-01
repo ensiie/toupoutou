@@ -19,6 +19,8 @@ end
 gem "mongoid", "~> 2.3"
 gem "bson_ext", "~> 1.4"
 
+gem "haml-rails", "~> 0.3.4"
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
