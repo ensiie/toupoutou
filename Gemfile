@@ -24,6 +24,12 @@ gem "devise", "~> 1.5.2"
 gem "pry-rails", "~> 0.0.4"
 gem "zurb-foundation", "~> 2.1.0"
 
+gem "rspec-rails", "~> 2.7.0", :group => [:development, :test]
+gem "database_cleaner", "~> 0.7.0", :group => :test
+gem "mongoid-rspec", "~> 1.4.4", :group => :test
+gem "factory_girl_rails", "~> 1.4.0", :group => :test
+gem "cucumber-rails", "~> 1.2.0", :group => :test
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
