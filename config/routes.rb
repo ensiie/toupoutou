@@ -1,7 +1,7 @@
 Toupoutou::Application.routes.draw do
   root :to => "home#index"
 
-	resource "friends"
+	resources "friends"
 
   get "dashboard/" => "dashboard#index"
 
