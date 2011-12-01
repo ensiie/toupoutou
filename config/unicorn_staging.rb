@@ -4,7 +4,7 @@ worker_processes 2
 
 working_directory APP_PATH + "current/"
 
-listen "/tmp/toupoutou.socket", :backlog => 64
+listen "/tmp/toupoutou.staging.socket", :backlog => 64
 
 timeout 30
 
