@@ -1,0 +1,44 @@
+html, body{
+	height: 100%;
+}
+
+header{
+    height: 250px;
+    background-color: #A6A2B7;
+}
+
+ul.topnav {
+    margin: 0;
+	float: left;
+    border-bottom: solid 1px #000;
+    width: 100%;
+    background-color: #E8E4F9;
+    li {
+        float: left;
+        margin: 0;
+        padding:{
+            top: 2px;
+            bottom: 1px;
+            left: 5px;
+            right: 20px;
+        }
+        width: 170px;
+        position: relative;
+        border-right: solid 1px #000;
+        list-style:none;
+    }
+}
+
+.container{
+    padding: 0 0;
+    height: 80%;
+    background-color: #D5CEF4;
+}
+
+footer{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    
+    background-color: #54439E;
+}
