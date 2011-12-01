@@ -3,11 +3,11 @@ rails_root  = ENV['RAILS_ROOT'] || "/home/toupoutou/www/#{rails_env}/current"
 shared_path = ENV['SHARED_PATH']
 num_workers = case rails_env
   when 'production'
-    5
+    1
   when 'staging'
-    5
+    1
   else
-    2
+    1
   end
 
 God.pid_file_directory = File.join(rails_root, %w(tmp pids))
