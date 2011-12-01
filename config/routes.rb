@@ -3,5 +3,7 @@ Toupoutou::Application.routes.draw do
 
 	resource "friends"
 
+  get "dashboard/" => "dashboard#index"
+
   devise_for :users
 end
