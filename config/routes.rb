@@ -3,5 +3,8 @@ Toupoutou::Application.routes.draw do
   match "dashboard" => "dashboard#index"
   match "friends" => "friends#import"
   
+
+	resource "friends"
+
   devise_for :users
 end
