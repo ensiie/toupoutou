@@ -36,7 +36,7 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem "unicorn", "~> 4.1.1"
 
 # Deploy with Capistrano
 gem "capistrano", "~> 2.9.0"
