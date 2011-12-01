@@ -1,9 +1,9 @@
 Toupoutou::Application.routes.draw do
   root :to => "home#index"
 
-	namespace :friends do
-		root :to => "friends#index"
-	end
+	get "friends" => "friends#index"
 
-  devise_for :users
+  get "dashboard" => "dashboard#index"
+  
+	devise_for :users
 end
