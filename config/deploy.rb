@@ -21,7 +21,7 @@ namespace :symlinks do
   end
 
   task :omniauth_config do
-    run "ln -nfs #{shared_path}/config/omniauth_config.yml #{current_release}/config/omniauth_config.yml"
+    run "ln -nfs #{shared_path}/config/omniauth_configs.yml #{current_release}/config/omniauth_configs.yml"
   end
 
   desc "Create dirs"
@@ -30,7 +30,7 @@ namespace :symlinks do
   end
 end
 
-namespace :restart_workers do
+namespace :deploy do
   desc "Restart Resque Workers"
   task :restart_workers, :roles => :app do
     rake = fetch(:rake, "rake")
