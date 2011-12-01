@@ -23,7 +23,9 @@ gem "haml-rails", "~> 0.3.4"
 gem "devise", "~> 1.5.2"
 gem "pry-rails", "~> 0.0.4"
 gem "zurb-foundation", "~> 2.1.0"
+gem "koala", "~> 1.2.1"
 
+gem 'nfo-resque-mongo', :require => 'resque'
 
 # Omniauth gems
 gem "omniauth-facebook", "~> 1.0.0"
