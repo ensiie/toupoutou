@@ -21,6 +21,7 @@ gem "bson_ext", "~> 1.4"
 
 gem "haml-rails", "~> 0.3.4"
 gem "devise", "~> 1.5.2"
+gem "pry-rails", "~> 0.0.4"
 
 gem 'jquery-rails'
 
