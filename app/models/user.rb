@@ -91,7 +91,9 @@ class User
       self.save
     else
       password = Devise.friendly_token[0,20]
-      self.facebook_friends.create(:email => "#{friend_data['username']}@facebook.com", :facebook_id => friend_data['id'], :password => password, :password_confirmation => password, :first_name  => friend_data['first_name'], :last_name => friend_data['last_name'])
+      user = self.facebook_friends.create(:email => "#{friend_data['username']}@facebook.com", :facebook_id => friend_data['id'], :password => password, :password_confirmation => password, :first_name  => friend_data['first_name'], :last_name => friend_data['last_name'])
+      user.async(:load_musics)
+      user.async(:load_films)
     end
   end
 end
