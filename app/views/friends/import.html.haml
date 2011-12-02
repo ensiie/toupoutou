@@ -1,34 +1,5 @@
-.show-on-desktops
-  = render "home/menu" 
-
-  .container
-    .row
-      .twelve.columns.show-on-desktops
-        %section.friends
-          %h4 Gérer votre liste d'amis
-          .row
-            .four.columns.centered.show-on-desktops
-              %input{:type => "text"} 
-              %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
-          
-          .list_friends
-            %ul
-              %li 
-                = link_to "Paul", "#"
-                .delete 
-                  X
-              %li 
-                = link_to "Seb", "#"
-                .delete
-                  X
-              %li 
-                = link_to "Adrian", "#" 
-                .delete
-                  X
-  %footer      
-
-.show-on-phones    
-  = render "home/phone"
-             
-
-
+= form_tag vimports_friends_path do
+  - @facebook_friends.each do |fbf|
+    %p= check_box_tag "imports[][#{fbf.id}]", true, current_user.friends.include?(fbf)
+    = fbf.name
+  = submit_tag
