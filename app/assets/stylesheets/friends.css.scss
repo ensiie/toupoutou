@@ -24,6 +24,16 @@
     width: 200px;
 }
 
+ul.fb_import li {
+    display: inline-block;
+    width: 200px;
+
+    label {
+      width: auto;
+      display: inline-block;
+    }
+}
+
 .delete{
     display: inline;
     float: right;
