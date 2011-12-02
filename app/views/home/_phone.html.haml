@@ -1,26 +1,68 @@
-%dl.nice.contained.tabs
-  %dd= link_to "Accueil", "#home", :class => "active"
-  %dd= link_to "Calendrier", "#calendar"
-  %dd= link_to "Wishlist", "#wishlist"
-  %dd= link_to "Friends", "#friends"
-
-%ul.nice.tabs-content.contained
-  %li.active#homeTab
-    %ul
-      %li= link_to "Editer mon profil", "#"
-  %li#calendarTab
-    %h5 
-      Calendrier
-      = render "home/calendar" 
-  %li#wishlistTab
-    %h5 
-      Wishlist
-      = render "home/wish" 
-  %li#friendsTab
-    %form
-      %fieldset
-        %p 
-          Inviter vos amis sur Gift4YourFriends
-        %input{:type => "text"} 
-        %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
-        = render "home/friend" 
+.container
+  .row
+    %dl.nice.contained.tabs
+      %dd= link_to "", "#home", :id => "homeLink", :class => "active"
+      %dd= link_to "", "#calendar", :id => "calendarLink"
+      %dd= link_to "", "#friends", :id => "friendsLink"
+      %dd= link_to "", "#wishes", :id => "wishesLink"
+      
+    %ul.nice.tabs-content.contained
+      %li.active#homeTab
+        %dl.nice.vertical.tabs
+          %dd= link_to "Modifier votre profil", "#", :class => "active"
+          %dd= link_to "Déconnexion", "#"
+      %li#calendarTab
+        %h5 Evènements à venir
+        %ul
+          %li
+            %span.date
+              05 déc.
+            %span.desc
+              Anniversaire de 
+              = link_to "Victor Bahl", "#", :class => "friend"
+          %li
+            %span.date
+              06 déc.
+            %span.desc
+              Anniversaire de 
+              = link_to "Ryo Saeba", "#", :class => "friend"  
+          %li
+            %span.date
+              09 déc.
+            %span.desc
+              Anniversaire de 
+              = link_to "Crum Gica", "#", :class => "friend"        
+      %li#friendsTab
+        %form{ :class => "nice"}
+          %fieldset
+            %p
+              Inviter vos amis sur Gift4YourFriends
+            %input{ :type => "text", :class => "input-text", :placeholder => "Nom ou adresse e-mail" }
+            = link_to "Inviter", "#", :class => "nice small radius red button"
+        %ul
+          %li
+            = link_to "Victor Bahl", "#", :class => "friend"
+            = link_to "x", "#", :class => "close"
+          %li
+            = link_to "Ryo Saeba", "#", :class => "friend"
+            = link_to "x", "#", :class => "close" 
+          %li
+            = link_to "Crum Gica", "#", :class => "friend"
+            = link_to "x", "#", :class => "close"              
+      %li#wishesTab
+        %form{ :class => "nice"}
+          %fieldset
+            %p
+              Ajouter une envie
+            %input{ :type => "text", :class => "input-text", :placeholder => "Nom produit" }
+            = link_to "Ajouter", "#", :class => "nice small radius red button"
+        %ul
+          %li
+            = link_to "Smartphone", "#", :class => "friend"
+            = link_to "x", "#", :class => "close"
+          %li
+            = link_to "Champagne", "#", :class => "friend"
+            = link_to "x", "#", :class => "close"  
+          %li
+            = link_to "Tablette graphique", "#", :class => "friend"
+            = link_to "x", "#", :class => "close" 
