@@ -40,6 +40,7 @@ gem "cucumber-rails", "~> 1.2.0", :group => :test
 gem "cucumber-websteps", :group => :test
 
 gem 'jquery-rails'
+gem 'rails3-jquery-autocomplete'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

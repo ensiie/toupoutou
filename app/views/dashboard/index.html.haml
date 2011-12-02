@@ -15,7 +15,7 @@
               =i.birthday
               =i.email
 
-        
+
     .six.columns.show-on-desktops
       %section.wishlist
         %h4 Liste de voeux
@@ -24,10 +24,10 @@
             %li
               &nbsp;
               =i.product_name
-      
+
         = form_for @item do |f|
           = f.label :product_name
-          = f.text_field :product_name
+          = f.autocomplete_field :product_name, autocomplete_wishlistItem_product_name_wishlist_items_path
           = f.submit
 
     .six.phone-two.columns.show-on-phones
