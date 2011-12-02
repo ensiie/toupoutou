@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+dsafdafvwq
+=======
 .show-on-desktops 
   .container
     .row 
@@ -17,3 +20,4 @@
           = link_to image_tag( 'inscription.png'), new_user_registration_path
           %br
           %h5 Inscription
+>>>>>>> Page d'accueil

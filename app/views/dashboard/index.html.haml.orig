@@ -1,0 +1,50 @@
+<<<<<<< HEAD
+.show-on-desktops
+  = render "home/menu"
+
+.show-on-phones    
+  = render "home/phone"      
+        
+.container
+  .row
+    .six.columns.show-on-desktops
+      %section.calendar
+        %h4 Calendrier
+        %ul
+          -@birthdays.each do |i|
+            %li
+              =i.birthday
+              =i.email
+
+        
+    .six.columns.show-on-desktops
+      %section.wishlist
+        %h4 Liste de voeux
+        %ol
+          -@items.each do |i|
+            %li
+              &nbsp;
+              =i.product_name
+      
+        = form_for @item do |f|
+          = f.label :product_name
+          = f.text_field :product_name
+          = f.submit
+
+    .six.phone-two.columns.show-on-phones
+      %section.calendar
+    .six.phone-two.columns.show-on-phones
+      %section.wishlist
+%footer
+=======
+.row
+  .six.columns.show-on-desktops
+    %section.calendar
+      %h4 Calendrier
+      = render "home/calendar" 
+      
+  .six.columns.show-on-desktops
+    %section.wishlist
+      %h4 Liste de voeux
+      = render "home/wish"
+>>>>>>> Page d'accueil

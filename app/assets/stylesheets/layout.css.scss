@@ -1,5 +1,6 @@
 html, body{
 	height: 100%;
+	color: black;
 }
 
 h4 {
@@ -9,7 +10,6 @@ h4 {
 
 header{
     height: 50px;
-    border-bottom: 1px solid grey;
 }
 
 .container{
@@ -29,6 +29,7 @@ ul.topnav {
     margin-top: 25px;
 	float: left;
     width: 100%;
+    border-bottom: 1px solid grey;
     li {
         float: left;
         margin: 0;
