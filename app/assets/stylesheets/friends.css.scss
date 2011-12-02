@@ -1,0 +1,30 @@
+// Place all the styles related to the friends controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.friends{
+    margin: 0 auto;
+    border: 1px solid grey;
+}
+
+.list_friends{
+    width: 500px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.invit{
+    float: right;
+    width: 80px;
+}
+
+.import{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.delete{
+    display: inline;
+    float: right;
+}
