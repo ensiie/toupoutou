@@ -2,6 +2,6 @@ class DashboardController < ApplicationController
   def index
 		@item = WishlistItem.new
 		@items = current_user.wishlistItems
-    @brithdays = current_user.friends.where(:birthday.lt => DateTime.now+30.day).where(:birthday.gt => DateTime.now)
+    @birthdays = current_user.friends.where(:birthday.lt => Date.today+30).where(:birthday.gt => Date.today)
   end
 end

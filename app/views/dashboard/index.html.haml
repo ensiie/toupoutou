@@ -10,9 +10,11 @@
       %section.calendar
         %h4 Calendrier
         %ul
-          %li 10/10/12 - Adrian
-          %li 01/10/09 - Seb
-          %li 05/11/01 - Soulou
+          -@birthdays.each do |i|
+            %li
+              =i.birthday
+              =i.email
+
         
     .six.columns.show-on-desktops
       %section.wishlist
