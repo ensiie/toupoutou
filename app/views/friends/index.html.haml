@@ -1,6 +1,4 @@
 .show-on-desktops
-  = render "home/menu" 
-
   .container
     .row
       .twelve.columns.show-on-desktops
@@ -12,7 +10,6 @@
               %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
           
           .list_friends
-            %p fewfwefwe
             %ul
               -@friends.each do |f|
                 %li 
@@ -20,10 +17,6 @@
                   = button_to "Supprimer", friend_path(f) , :method => :delete, :confirm => "Voulez-vous supprimer " + f.first_name + " " + f.last_name
                   %span.delete 
                     X
-  %footer      
-
-.show-on-phones    
-  = render "home/phone"
              
 
 
