@@ -1,5 +1,27 @@
 %h1= @friend.name
 
+<<<<<<< HEAD
+%p
+  - if @friend.birthday == nil then
+    Pas d'information concernant la date d'anniversaire 
+  - else
+    Date d'anniversaire :
+    =@friend.birthday
+  
+%p
+  - if @friend.interests == nil or @friend.interests.count == 0 then
+    Pas d'intérêt particulier
+  - else
+    Intérêts :
+    =@friend.interests
+
+%p
+  - if @friend.wishlistItems.count == 0 then
+    Il/Elle n'a pas de liste de souhaits
+  - else
+    Sa liste de souhaits :
+%ul
+=======
 %h2 Intérêts
 %p= @friend.interests
 
@@ -9,6 +31,7 @@
     Il/Elle n'a pas de liste de souhaits
 - else
   %ul
+>>>>>>> new profile
   - @friend.wishlistItems.each do |i|
     %li
       = i.product_name
