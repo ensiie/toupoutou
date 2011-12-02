@@ -1,6 +1,9 @@
 = form_tag vimports_friends_path do
-  - @facebook_friends.each do |fbf|
-    %p= check_box_tag "imports[][#{fbf.id}]", true, current_user.friends.include?(fbf)
-    = fbf.name
+  %ul.fb_import
+    - @facebook_friends.each do |fbf|
+      %li
+        = label_tag "imports[][#{fbf.id}]", fbf.name
+        = check_box_tag "imports[][#{fbf.id}]", true, current_user.friends.include?(fbf)
+
   = submit_tag
 

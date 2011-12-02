@@ -1,0 +1,39 @@
+%p
+  Nom : 
+  =@friend.last_name
+  %br
+  Prénom :
+  =@friend.first_name
+
+%p
+  Intérêts :
+  =@friend.interests
+
+- if @friend.wishlistItems.count == 0 then
+  %p
+    Il/Elle n'a pas de liste de souhaits
+- else
+  %p
+    Sa liste de souhaits :
+  %ul
+  - @friend.wishlistItems.each do |i|
+    %li
+      = i.product_name
+
+- if @friend.musics.count == 0 then
+  %p
+    Il/Elle n'a pas donné de détails concernant ses goûts musicaux
+- else
+  %ul
+  - @friend.musics.each do |m|
+    %li
+      = m.name
+	
+- if @friend.musics.count == 0 then
+  %p
+    Il/Elle n'a pas précisé de films
+- else
+  %ul
+  - @friend.Films.each do |f|
+    %li
+      = f.name
