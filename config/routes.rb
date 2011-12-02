@@ -16,7 +16,7 @@ Toupoutou::Application.routes.draw do
 
   get "dashboard/" => "dashboard#index"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+  devise_for :users, :controllers => { :registrations => "registrations" ,:omniauth_callbacks => "users/omniauth_callbacks" } do
     root :to => 'dashboard#index'
   end
 end

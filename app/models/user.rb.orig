@@ -7,30 +7,26 @@ class User
 
 	has_many :wishlistItems
   field :facebook_id, :type => Integer
-<<<<<<< HEAD
   field :birthday, :type => Date
-
-  has_and_belongs_to_many :friends, :class_name => "User"
-  has_and_belongs_to_many :facebook_friends, :class_name => 'User'
-=======
+<<<<<<< HEAD
   field :avatar
+=======
+  field :interests, :type => String
+>>>>>>> ajout edit user
 
   def name
     "#{first_name} #{last_name}"
   end
 
+  field :facebook_id, :type => Integer
+  field :birthday, :type => Date
+  
   has_and_belongs_to_many :friends, :class_name => 'User', :autosave => true, :inverse_of => :friends_of
   has_and_belongs_to_many :friends_of, :class_name => 'User', :autosave => true, :inverse_of => :friends
   has_and_belongs_to_many :facebook_friends, :class_name => 'User', :autosave => true, :inverse_of => :facebook_friends_of
   has_and_belongs_to_many :facebook_friends_of, :class_name => 'User', :autosave => true, :inverse_of => :facebook_friends
->>>>>>> import friends from facebook
 
-  field :facebook_id, :type => Integer
-  field :birthday, :type => Date
-  
   @queue = :toupoutou_users
-
-  has_and_belongs_to_many :friends, :class_name => "User"
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']

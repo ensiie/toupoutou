@@ -9,6 +9,7 @@ class User
   field :facebook_id, :type => Integer
   field :birthday, :type => Date
   field :avatar
+  field :interests, :type => String
 
   def name
     "#{first_name} #{last_name}"
