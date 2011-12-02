@@ -4,10 +4,12 @@
       %section.calendar
         %h4 Calendrier
         %ul
-          -@birthdays.each do |i|
+          -@birth.each do |i|
             %li
+              le
               =i.birthday
-              =i.email
+              ça sera l'anniversaire de 
+              =i.first_name
 
 
     .six.columns.show-on-desktops
