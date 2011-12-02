@@ -1,4 +1,7 @@
 class FriendsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def import
     @facebook_friends = current_user.facebook_friends
   end
