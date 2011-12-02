@@ -11,7 +11,7 @@ class FriendsController < ApplicationController
         current_user.friends.delete fbf
       end
     end
-    redirect_to :action => :import
+    redirect_to :action => :index
   end
 
 	def index
@@ -20,7 +20,7 @@ class FriendsController < ApplicationController
 
 	def destroy
 		@friend = User.find(params[:id])
-		@friend.destroy
+		current_user.friends.delete @friend
 		redirect_to friends_path
 	end
 end
