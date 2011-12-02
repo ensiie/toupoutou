@@ -45,6 +45,129 @@ ul.topnav {
     }
 }
 
+ul.topnav li .edit img{
+
+    width: 90px;
+        height: 115px;
+}
+
+ul.topnav li .friendsimg img{
+    text-decoration: none;
+    margin-top: 35px;
+    width: 80px;
+}
+
+.amis{
+    margin-left: 20px;
+    text-align: center;
+}
+
+ul.topnav li .wish img{
+
+    width: 55px;
+}
+
 ul.contained.tabs-content li {
     border: none;
 }
+
+/* Foundation v2.1.1 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+li {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+ul {
+    width: 100%;
+}
+.publish-time {
+	color: #999;
+	font-size: smaller;
+}
+
+.date {
+	color: #999;
+}
+
+.nice.tabs { 
+	margin-top: 5px;
+	height: 68px;
+}
+
+dl.tabs dd a {
+	height: 55px !important;
+}
+
+ul ul {
+	margin-left: 0;
+}
+
+a.close { color: #000; position: absolute; right: 4px; top: 0px; opacity: 0.2; padding: 4px; }
+a.close:hover,.alert-box a.close:focus { opacity: 0.4; }
+
+#homeLink {
+	background: asset_url('home.png', image) 4px no-repeat;
+	width: 35px;
+}
+
+#calendarLink {
+	background: asset_url('calendar.png', image) 14px no-repeat;
+	width: 35px;
+}
+
+#friendsLink {
+	background: asset_url('friends.png', image) 4px no-repeat;
+	width: 35px;
+}
+
+#wishesLink {
+	background: asset_url('wishes.png', image) 14px no-repeat;
+	width: 35px;
+}
+
+.nice.tabs dd a {
+	opacity: 0.5;
+}
+
+.nice.tabs dd a.active {
+	opacity: 1;
+}
+
+/*
+.tabs-content {
+	height: 100%;
+	background: url(../images/logo.png) top right no-repeat;
+}
+*/
+
+
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+

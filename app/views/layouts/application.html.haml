@@ -15,9 +15,17 @@
         %nav 
           %ul.topnav
             %li= link_to 'Tableau de bord', dashboard_path
-            %li= link_to 'Editer mon profil', "#"
-            %li= link_to 'Amis', friends_path
-      
+
+            %li
+              = link_to image_tag( 'inscription.png'), "#", :class => "edit"
+              %br
+              = link_to "Editer mon profil", "#"
+                          
+            %li
+              = link_to image_tag( 'friends.png'), friends_path, :class => "friendsimg"
+              %br
+              = link_to "Amis", friends_path, :class => "amis"
+              
   .container  
     = yield
 
