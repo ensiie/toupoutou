@@ -3,20 +3,20 @@ require "resque/server"
 Toupoutou::Application.routes.draw do
   root :to => "home#index"
   
-	match "dashboard" => "dashboard#index"
-  match "friends" => "friends#import"
-  
   mount Resque::Server.new, :at => "/resque"
 
 <<<<<<< HEAD
-	resources "friends"
-	resources "wishlist_items", :only => [:create]
+  resources "wishlist_items", :only => [:create] do
+    get :autocomplete_wishlistItem_product_name, :on => :collection
+  end
 =======
+	resources "wishlist_items", :only => [:create]
+>>>>>>> clean routes
+
   resources :friends do
     get :import, :action => 'import', :on => :collection
     post :import, :action => 'validate_import', :on => :collection, :as => :vimports
   end
->>>>>>> import friends from facebook
 
   get "dashboard/" => "dashboard#index"
 

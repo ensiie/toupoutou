@@ -3,8 +3,6 @@ require "resque/server"
 Toupoutou::Application.routes.draw do
   root :to => "home#index"
   
-	match "dashboard" => "dashboard#index"
-  
   mount Resque::Server.new, :at => "/resque"
 
   resources "wishlist_items", :only => [:create] do
