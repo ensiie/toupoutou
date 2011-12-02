@@ -1,18 +1,19 @@
-.show-on-desktops
+.hide-on-phones
   .container
     .row
-      .twelve.columns.show-on-desktops
+      .twelve.columns.hide-on-phones
         %section.friends
           %h4 Gérer votre liste d'amis
           .row
-            .four.columns.centered.show-on-desktops
-              =link_to image_tag( 'importer_ami.png'), vimports_friends_path
-              = button_to "Importer depuis Facebook", import_friends_path, :method => :get, :class => "nice small radius blue button"
-              %br
+            .four.columns.centered.hide-on-phones
+              -if @user.facebook_id == nil then
+                =link_to image_tag( 'importer_ami.png'), vimports_friends_path
+                = button_to "Importer depuis Facebook", import_friends_path, :method => :get, :class => "nice small radius blue button"
+                %br
               %input{:type => "text"} 
               %input{:type => "button", :value => "Rechercher/Inviter", :class => "invit nice small radius blue button"}
           
-            .four.columns.centered.show-on-desktops{:style => 'text-align:center'}
+            .four.columns.centered.hide-on-phones{:style => 'text-align:center'}
               -# %input{:type => "text", :class => "input_invit"} 
               -# %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
           .list_friends
