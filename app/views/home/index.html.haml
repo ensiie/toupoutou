@@ -3,8 +3,7 @@
     .row 
       .four.columns.centered.connexion
         %figure.login
-          = image_tag( 'poutou_accueil.png')
-    
+          =link_to image_tag( 'poutou_accueil.png'), user_omniauth_authorize_path(:facebook)
     .row    
       .twelve.columns.centered.connexion
     .row
