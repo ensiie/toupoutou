@@ -1,18 +1,20 @@
 .container
   .row
-    .six.columns.show-on-desktops
+    .six.columns.hide-on-phones
       %section.calendar
         %h4 Calendrier
         %ul
           -@birth.each do |i|
             %li
-              le
-              =i.birthday
-              ça sera l'anniversaire de 
-              =i.first_name
+              =i.birthday.to_s.last(5).split("-").reverse.join("-") + " : "
+              anniversaire de 
+              =i.first_name + " " + i.last_name
+              il aura
+              =(Date.today.year - i.birthday.year)
+              ans
 
 
-    .six.columns.show-on-desktops
+    .six.columns-hide-on-phones
       %section.wishlist
         %h4 Liste de voeux
         %ol

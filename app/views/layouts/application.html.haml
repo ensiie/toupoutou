@@ -9,8 +9,8 @@
   .show-on-phones  
     %nav  
       = render "home/phone"
-  - unless controller.controller_name == 'home'
-    .show-on-desktops 
+  .hide-on-phones
+    - unless controller.controller_name == 'home'
       %header
         %nav 
           %ul.topnav
