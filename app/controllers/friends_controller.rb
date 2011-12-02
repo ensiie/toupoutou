@@ -1,11 +1,11 @@
 class FriendsController < ApplicationController
 	def index
-		@friends = Array.new
-		user = current_user
-		user.friends.each do |f|
-			if user.id == f.id then
-				@friends.push user
-			end
-		end
+		@friends = current_user.friends
+	end
+
+	def destroy
+		@friend = User.find(params[:id])
+		@friend.destroy
+		redirect_to friends_path
 	end
 end
