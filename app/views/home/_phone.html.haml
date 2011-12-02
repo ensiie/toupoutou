@@ -7,25 +7,20 @@
 %ul.nice.tabs-content.contained
   %li.active#homeTab
     %ul
-      %li Editer mon profil
+      %li= link_to "Editer mon profil", "#"
   %li#calendarTab
     %h5 
-      Evènements à venir
-      %ul
-        %li 05 déc. Victor Bahl
-        %li 06 déc. Ryo Saeba     
-        %li 09 déc. Crum Gica 
+      Calendrier
+      = render "home/calendar" 
   %li#wishlistTab
     %h5 
       Wishlist
-      %ul
-        %li cadeau 1
-        %li cadeau 2    
-        %li cadeau 3               
+      = render "home/wish" 
   %li#friendsTab
     %form
       %fieldset
         %p 
           Inviter vos amis sur Gift4YourFriends
-      %input{:type => "button", :class => "input-text", :placeholder => "Nom ou adresse e-mail"}
-        = link_to "Button Text", "#"
+        %input{:type => "text"} 
+        %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
+        = render "home/friend" 

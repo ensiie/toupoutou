@@ -1,24 +1,10 @@
-.show-on-desktops
-  = render "home/menu"
-
-.show-on-phones    
-  = render "home/phone"      
-        
-.container
-  .row
-    .six.columns.show-on-desktops
-      %section.calendar
-        %h4 Calendrier
-        %ul
-          %li 10/10/12 - Adrian
-          %li 01/10/09 - Seb
-          %li 05/11/01 - Soulou
-        
-    .six.columns.show-on-desktops
-      %section.wishlist
-        %h4 Liste de voeux
-    
-    
-          
-        
-%footer
+.row
+  .six.columns.show-on-desktops
+    %section.calendar
+      %h4 Calendrier
+      = render "home/calendar" 
+      
+  .six.columns.show-on-desktops
+    %section.wishlist
+      %h4 Liste de voeux
+      = render "home/wish"

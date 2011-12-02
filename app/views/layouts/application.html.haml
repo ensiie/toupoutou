@@ -6,7 +6,21 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+  %header
+    .show-on-phones  
+      %nav  
+        = render "home/phone"
+    - unless controller.controller_name == 'home'
+      .show-on-desktops 
+        %nav 
+          %ul.topnav
+            %li= link_to 'Tableau de bord', dashboard_path
+            %li= link_to 'Editer mon profil', "#"
+            %li= link_to 'Amis', friends_path
+      
+  .container  
     = yield
 
+  %footer
     
       

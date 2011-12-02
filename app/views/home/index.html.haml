@@ -1,0 +1,19 @@
+.show-on-desktops 
+  .container
+    .row 
+      .four.columns.centered.connexion
+        %figure.login
+          = image_tag( 'poutou_accueil.png')
+    
+    .row    
+      .twelve.columns.centered.connexion
+    .row
+      .five.columns.centered.connexion
+        .login
+          = link_to image_tag( 'login.png'), user_session_path
+          %br
+          %h5 Se connecter
+        .inscription
+          = link_to image_tag( 'inscription.png'), new_user_registration_path
+          %br
+          %h5 Inscription
