@@ -1,9 +1,5 @@
-=form_for current_user, :remote => true, :url => { :controller => 'friends', :action => 'validate_import' } do |f|
-  - f.fields_for :friends
-    %ul
-      - @facebook_friends.each do |facebook_friend|
-        %li
-          %img{ :src => facebook_friend.avatar }
-        %p= facebook_friend.name + ' ' + facebook_friend.first_name
-        =f.check_box :friend
-  =f.submit
+= form_tag vimports_friends_path do
+  - @facebook_friends.each do |fbf|
+    %p= check_box_tag "imports[][#{fbf.id}]", true, current_user.friends.include?(fbf)
+    = fbf.name
+  = submit_tag

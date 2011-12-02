@@ -8,11 +8,15 @@ Toupoutou::Application.routes.draw do
   
   mount Resque::Server.new, :at => "/resque"
 
+<<<<<<< HEAD
+	resources "friends"
 	resources "wishlist_items", :only => [:create]
+=======
   resources :friends do
     get :import, :action => 'import', :on => :collection
     post :import, :action => 'validate_import', :on => :collection, :as => :vimports
   end
+>>>>>>> import friends from facebook
 
   get "dashboard/" => "dashboard#index"
 
