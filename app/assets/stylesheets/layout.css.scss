@@ -14,9 +14,19 @@ h4 {
     text-align: center;
 }
 
+.logo {
+  margin: 0 auto;
+}
+
 .connect_with_fb {
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 header{
