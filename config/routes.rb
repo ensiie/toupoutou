@@ -4,6 +4,7 @@ Toupoutou::Application.routes.draw do
   root :to => "home#index"
 
 	resources "friends"
+	resources "wishlist_items", :only => [:create]
 
   mount Resque::Server.new, :at => "/resque"
 

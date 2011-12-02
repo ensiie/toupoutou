@@ -4,14 +4,19 @@
   .row
     .six.columns.show-on-desktops
       %section.calendar
-        =@birthdays.count
     .six.columns.show-on-desktops
       %section.wishlist
-        %ul
+        %ol
           -@items.each do |i|
-            %li=i.product_name
+            %li
+              &nbsp;
+              =i.product_name
       
-        %button "Ajouter un objet"
+        = form_for @item do |f|
+          = f.label :product_name
+          = f.text_field :product_name
+          = f.submit
+
     .six.phone-two.columns.show-on-phones
       %section.calendar
     .six.phone-two.columns.show-on-phones
