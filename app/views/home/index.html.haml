@@ -2,8 +2,11 @@
   .container
     .row 
       .six.columns.centered.connexion
+        %h1 Toupoutou Gift4YourFriends
         %figure.login
-          =link_to image_tag( 'poutou_accueil.png'), user_omniauth_authorize_path(:facebook)
+          %p
+            A chaque personne son cadeau. Les Toupoutous sont là pour vous aider à trouver le bon !
+          =link_to image_tag( 'poutou_accueil.png') + 'Aidez les Toupoutous à trouver le meilleur cadeau grâce à Facebook !!', user_omniauth_authorize_path(:facebook), { :class => 'connect_with_fb' }
     .row    
       .twelve.columns.centered.connexion
     .row
