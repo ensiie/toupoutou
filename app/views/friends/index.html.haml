@@ -6,6 +6,11 @@
           %h4 Gérer votre liste d'amis
           .row
             .four.columns.centered.show-on-desktops
+              Importer des amis depuis Facebook :
+              =link_to image_tag( 'importer_ami.png'), vimports_friends_path
+              %br
+              %br
+              Rechercher/inviter des amis :
               %input{:type => "text"} 
               %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
           

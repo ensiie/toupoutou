@@ -6,16 +6,25 @@
   =@friend.first_name
 
 %p
-  Intérêts :
-  =@friend.interests
+  - if @friend.birthday == nil then
+    Pas d'information concernant la date d'anniversaire 
+  - else
+    Date d'anniversaire :
+    =@friend.birthday
+  
+%p
+  - if @friend.interests == nil or @friend.interests.count == 0 then
+    Pas d'intérêt particulier
+  - else
+    Intérêts :
+    =@friend.interests
 
-- if @friend.wishlistItems.count == 0 then
-  %p
+%p
+  - if @friend.wishlistItems.count == 0 then
     Il/Elle n'a pas de liste de souhaits
-- else
-  %p
+  - else
     Sa liste de souhaits :
-  %ul
+%ul
   - @friend.wishlistItems.each do |i|
     %li
       = i.product_name
@@ -34,6 +43,6 @@
     Il/Elle n'a pas précisé de films
 - else
   %ul
-  - @friend.Films.each do |f|
+  - @friend.films.each do |f|
     %li
       = f.name
