@@ -23,4 +23,8 @@ class FriendsController < ApplicationController
 		current_user.friends.delete @friend
 		redirect_to friends_path
 	end
+
+	def show
+		@friend = User.find(params[:id])
+	end
 end
