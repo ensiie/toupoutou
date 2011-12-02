@@ -7,13 +7,10 @@
     = csrf_meta_tags
   %body
     = yield
-
-    
     %header
       %nav
         %ul.topnav
           %li= link_to 'facebok', user_omniauth_authorize_path(:facebook)
           %li Lien 2
           %li Lien 3
-    = yield
       
