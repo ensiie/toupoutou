@@ -5,6 +5,14 @@
         %section.friends
           %h4 Gérer votre liste d'amis
           .row
+            .four.columns.centered.show-on-desktops
+              Importer des amis depuis Facebook :
+              =link_to image_tag( 'importer_ami.png'), vimports_friends_path
+              %br
+              Rechercher/inviter des amis :
+              %input{:type => "text"} 
+              %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
+          
             .four.columns.centered.show-on-desktops{:style => 'text-align:center'}
               = button_to "Importer depuis Facebook", import_friends_path, :method => :get, :class => "nice small radius blue button"
               -# %input{:type => "text", :class => "input_invit"} 
