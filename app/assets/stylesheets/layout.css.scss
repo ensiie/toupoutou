@@ -1,6 +1,7 @@
 html, body{
-	height: 100%;
+	min-height: 100%;
 	color: black;
+
 }
 
 h4 {
@@ -9,11 +10,35 @@ h4 {
 }
 
 header{
-    height: 50px;
+    margin-bottom: 10px; background: #f8ffe8; /* Old browsers */
+  background: #bfdd52; /* Old browsers */
+  background: -moz-linear-gradient(top,  #bfdd52 0%, #e3f5ab 33%, #ffffff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bfdd52), color-stop(33%,#e3f5ab), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #bfdd52 0%,#e3f5ab 33%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #bfdd52 0%,#e3f5ab 33%,#ffffff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #bfdd52 0%,#e3f5ab 33%,#ffffff 100%); /* IE10+ */
+  background: linear-gradient(top,  #bfdd52 0%,#e3f5ab 33%,#ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfdd52', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+  font-weight: bold;
+  font-size: 1.2em;
+  a {
+    color: #333;
+  }
 }
 
+input[type=text], input[type=password], input[type=email] {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+
 .container{
-    padding: 0 0;
+    padding: 20px;
 }
 /*
 footer{
@@ -24,46 +49,48 @@ footer{
 }
 */
 ul.topnav {
-    margin-top: 25px;
-	float: left;
+    display: table;
+    height: 150px;
     width: 100%;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #bfdd52;
     li {
-        float: left;
-        margin: 0;
-        padding:{
-            top: 2px;
-            bottom: 1px;
-            left: 5px;
-            right: 20px;
-        }
-        width: 170px;
-        position: relative;
-        list-style:none;
+      margin: 0;
+      padding {
+        top: 2px;
+        bottom: 1px;
+        left: 5px;
+        right: 20px;
+      }
+      width: 170px;
+      position: relative;
+      list-style:none;
+    }
+    img {
+      height: 80px;
     }
 }
 
-ul.topnav li .edit img{
-
-    width: 90px;
-        height: 115px;
+ul.topnav li {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
-ul.topnav li .friendsimg img{
-    text-decoration: none;
-    margin-top: 35px;
-    width: 80px;
-}
+// ul.topnav li .friendsimg img{
+    // text-decoration: none;
+    // margin-top: 35px;
+    // width: 80px;
+// }
 
 .amis{
     margin-left: 20px;
     text-align: center;
 }
 
-ul.topnav li .wish img{
+// ul.topnav li .wish img{
 
-    width: 55px;
-}
+//     width: 55px;
+// }
 
 ul.contained.tabs-content li {
     border: none;
