@@ -6,6 +6,9 @@ class User
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   field :facebook_id, :type => Integer
+  field :birthday, :type => Date
+
+  has_and_belongs_to_many :friends, :class_name => "User"
 
   has_and_belongs_to_many :facebook_friends, :class_name => 'User'
 
