@@ -5,11 +5,16 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  field :facebook_id, :type => Integer
+	has_many :wishlistItems
 
   has_and_belongs_to_many :facebook_friends, :class_name => 'User'
 
+  field :facebook_id, :type => Integer
+  field :birthday, :type => Date
+  
   @queue = :toupoutou_users
+
+  has_and_belongs_to_many :friends, :class_name => "User"
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']
@@ -52,3 +57,4 @@ class User
     end
   end
 end
+

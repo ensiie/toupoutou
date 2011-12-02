@@ -8,10 +8,10 @@ Toupoutou::Application.routes.draw do
   
   mount Resque::Server.new, :at => "/resque"
 
-  resource "friends"
+	resources "friends"
+	resources "wishlist_items", :only => [:create]
 
   get "dashboard/" => "dashboard#index"
-
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     root :to => 'home#index'
