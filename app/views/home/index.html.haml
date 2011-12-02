@@ -16,3 +16,18 @@
           = link_to image_tag( 'inscription.png'), new_user_registration_path
           %br
           %h5 Inscription
+:javascript
+  $(document).ready(function () {  
+   
+    $(document).bind('keydown', 'c', function () {
+      document.location.href="/users/sign_in" 
+    });
+
+    $(document).bind('keydown', 'i', function () {
+      document.location.href="/users/sign_up" 
+    });
+    
+    $(document).bind('keydown', 'f', function () {
+      document.location.href="/users/auth/facebook" 
+    });
+  })
