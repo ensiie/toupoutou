@@ -20,16 +20,16 @@
     %li
       = i.product_name
 
-- if @friend.Musics.count == 0 then
+- if @friend.musics.count == 0 then
   %p
     Il/Elle n'a pas donné de détails concernant ses goûts musicaux
 - else
   %ul
-  - @friend.Musics.each do |m|
+  - @friend.musics.each do |m|
     %li
       = m.name
 	
-- if @friend.Musics.count == 0 then
+- if @friend.musics.count == 0 then
   %p
     Il/Elle n'a pas précisé de films
 - else
