@@ -10,6 +10,7 @@ class User
   field :birthday, :type => Date
   field :avatar
   field :interests, :type => String
+  field :facebook_access_token
 
   def name
     "#{first_name} #{last_name}"
