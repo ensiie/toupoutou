@@ -5,9 +5,11 @@ class DashboardController < ApplicationController
 		
 		@birthday = []
 		@birthdays = []
+		@birth = []
 		User.all.each do |u|
 		  if !(u.birthday.nil?) and (u.birthday.to_s.last(5).split("-").join <= (Date.today+20).to_s.last(5).split("-").join) and (u.birthday.to_s.last(5).split("-").join >= (Date.today).to_s.last(5).split("-").join)
 		    @birthdays << u.birthday
+		    @birth << u
       else
       
       end
