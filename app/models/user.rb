@@ -62,7 +62,7 @@ class User
 
   def load_musics
     @api = Koala::Facebook::API.new(self.facebook_access_token)
-    musics = @api.get_connections('me', 'music')
+    musics = @api.get_connections(self.facebook_id, 'music')
     musics.each do |music_attrs|
       if music = Music.where(:facebook_id => music_attrs['id']).first
         self.musics << music
@@ -74,7 +74,7 @@ class User
 
   def load_films
     @api = Koala::Facebook::API.new(self.facebook_access_token)
-    films = @api.get_connections('me', 'movies')
+    films = @api.get_connections(self.facebook_id, 'movies')
     films.each do |films_attrs|
       if music = Film.where(:facebook_id => films_attrs['id']).first
         self.films << music
