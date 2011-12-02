@@ -9,7 +9,9 @@ Toupoutou::Application.routes.draw do
   mount Resque::Server.new, :at => "/resque"
 
 	resources "friends"
-	resources "wishlist_items", :only => [:create]
+	resources "wishlist_items", :only => [:create] do
+    get :autocomplete_wishlistItem_product_name, :on => :collection
+  end
 
   get "dashboard/" => "dashboard#index"
 
