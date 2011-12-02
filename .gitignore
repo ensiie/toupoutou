@@ -17,3 +17,5 @@
 # Ignore yml config files
 /config/*.yml
 !/config/*.yml.example
+
+.DS_Store
