@@ -6,31 +6,29 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-<<<<<<< HEAD
-    %header
-      %nav
-        %ul.topnav
-          %li= link_to 'facebok', user_omniauth_authorize_path(:facebook)
-          %li Lien 2
-          %li Lien 3
-    = yield
-=======
-  %header
-    .show-on-phones  
-      %nav  
-        = render "home/phone"
-    - unless controller.controller_name == 'home'
-      .show-on-desktops 
+  .show-on-phones  
+    %nav  
+      = render "home/phone"
+  - unless controller.controller_name == 'home'
+    .show-on-desktops 
+      %header
         %nav 
           %ul.topnav
             %li= link_to 'Tableau de bord', dashboard_path
-            %li= link_to 'Editer mon profil', "#"
-            %li= link_to 'Amis', friends_path
-      
+
+            %li
+<<<<<<< HEAD
+              = link_to image_tag( 'inscription.png'), "/users/edit", :class => "edit"
+=======
+              = link_to image_tag( 'inscription.png'), edit_user_registration_path, :class => "edit"
+>>>>>>> f90ea50aee9cc72333ca4abc2ee7250a6ca6a511
+              %br
+              = link_to "Editer mon profil", edit_user_registration_path
+            %li
+              = link_to image_tag( 'friends.png'), friends_path, :class => "friendsimg"
+              %br
+              = link_to "Amis", friends_path, :class => "amis"
+              
   .container  
     = yield
 
-  %footer
-    
->>>>>>> Page d'accueil
-      

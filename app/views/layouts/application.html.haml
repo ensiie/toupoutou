@@ -26,6 +26,10 @@
               = link_to image_tag( 'friends.png'), friends_path, :class => "friendsimg"
               %br
               = link_to "Amis", friends_path, :class => "amis"
+            %li
+              = link_to image_tag( 'deloguer.png'), destroy_user_session_path,:method => :delete, :class => "deloguer"
+              %br
+              = link_to "Se déconnecter", destroy_user_session_path
               
   .container  
     = yield
