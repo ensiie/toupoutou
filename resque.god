@@ -3,11 +3,11 @@ rails_root  = ENV['RAILS_ROOT'] || "/home/toupoutou/www/#{rails_env}/current"
 shared_path = ENV['SHARED_PATH']
 num_workers = case rails_env
   when 'production'
-    5
+    3
   when 'staging'
-    5
+    3
   else
-    2
+    3
   end
 
 God.pid_file_directory = File.join(rails_root, %w(tmp pids))
@@ -23,12 +23,12 @@ num_workers.times do |num|
     w.start    = "cd #{rails_root} && rake environment resque:work"
 
     # restart if memory gets too high
-    w.transition(:up, :restart) do |on|
-      on.condition(:memory_usage) do |c|
-        c.above = 350.megabytes
-        c.times = 2
-      end
-    end
+    #w.transition(:up, :restart) do |on|
+    #  on.condition(:memory_usage) do |c|
+    #    c.above = 350.megabytes
+    #    c.times = 2
+    #  end
+    #end
 
     # determine the state on startup
     w.transition(:init, { true => :up, false => :start }) do |on|

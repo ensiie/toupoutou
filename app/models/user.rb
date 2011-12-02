@@ -7,6 +7,8 @@ class User
 
   field :facebook_id, :type => Integer
 
+  has_and_belongs_to_many :facebook_friends, :class_name => 'User'
+
   @queue = :toupoutou_users
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
@@ -42,10 +44,11 @@ class User
     @api = Koala::Facebook::API.new(self.facebook_access_token)
     friend_data = @api.get_object(friend_id)
     if friend = User.where(:facebook_id => friend_data['id']).first
-      # TODO attr
+      self.facebook_friends << friend
+      self.save
     else
       password = Devise.friendly_token[0,20]
-      friend = User.create(:email => "#{friend_data['username']}@facebook.com", :facebook_id => friend_data['id'], :password => password, :password_confirmation => password, :first_name  => friend_data['first_name'], :last_name => friend_data['last_name'])
+      self.facebook_friends.create(:email => "#{friend_data['username']}@facebook.com", :facebook_id => friend_data['id'], :password => password, :password_confirmation => password, :first_name  => friend_data['first_name'], :last_name => friend_data['last_name'])
     end
   end
 end

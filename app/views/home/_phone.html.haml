@@ -1,0 +1,31 @@
+%dl.nice.contained.tabs
+  %dd= link_to "Accueil", "#home", :class => "active"
+  %dd= link_to "Calendrier", "#calendar"
+  %dd= link_to "Wishlist", "#wishlist"
+  %dd= link_to "Friends", "#friends"
+
+%ul.nice.tabs-content.contained
+  %li.active#homeTab
+    %ul
+      %li Editer mon profil
+  %li#calendarTab
+    %h5 
+      Evènements à venir
+      %ul
+        %li 05 déc. Victor Bahl
+        %li 06 déc. Ryo Saeba     
+        %li 09 déc. Crum Gica 
+  %li#wishlistTab
+    %h5 
+      Wishlist
+      %ul
+        %li cadeau 1
+        %li cadeau 2    
+        %li cadeau 3               
+  %li#friendsTab
+    %form
+      %fieldset
+        %p 
+          Inviter vos amis sur Gift4YourFriends
+      %input{:type => "button", :class => "input-text", :placeholder => "Nom ou adresse e-mail"}
+        = link_to "Button Text", "#"
