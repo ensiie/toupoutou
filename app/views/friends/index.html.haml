@@ -12,14 +12,12 @@
               %input{:type => "button", :value => "Inviter", :class => "invit nice small radius blue button"}
           
           .list_friends
-            %p fewfwefwe
             %ul
               -@friends.each do |f|
                 %li 
-                  %p= f.first_name.capitalize + " " + f.last_name.capitalize
-                  = button_to "Supprimer", friend_path(f) , :method => :delete, :confirm => "Voulez-vous supprimer " + f.first_name + " " + f.last_name
+                  = link_to f.first_name.capitalize + " " + f.last_name.capitalize, friend_path(f)
                   %span.delete 
-                    X
+                    =link_to "X", friend_path(f), :method => :delete, :confirm => "Voulez-vous supprimer " + f.first_name + " " + f.last_name
   %footer      
 
 .show-on-phones    
