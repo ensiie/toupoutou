@@ -63,7 +63,7 @@ class RegistrationsController < ApplicationController
 #      respond_with_navigational(resource){ render_with_scope :edit }
 #    end
     self.resource.update_attributes params[:user]
-      respond_with resource, :location => after_update_path_for(resource)
+      respond_with resource, :location => friend_path(resource)
   end
 
   # DELETE /resource
