@@ -37,8 +37,8 @@ class User
       user = User.create(:email => data["email"], :facebook_id => data['id'], :facebook_access_token => access_token['credentials']['token'], :password => password, :password_confirmation => password, :first_name  => data.first_name, :last_name => data.last_name)
       user.async(:load_friends)
       user.async(:load_musics)
-      # user.async(:load_films)
-      load_films
+      user.async(:load_films)
+      # load_films
       user
     end
   end
